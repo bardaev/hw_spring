@@ -24,7 +24,7 @@ public class MainController {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    private BankService bankService;
+    private final BankService bankService;
 
     @Autowired
     public MainController(BankService bankService) {

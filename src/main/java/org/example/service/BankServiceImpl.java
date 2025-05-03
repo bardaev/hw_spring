@@ -12,12 +12,10 @@ public class BankServiceImpl implements BankService {
     public Currency getCurrency(String number) {
         char firstDigit = number.charAt(0);
         Currency currency;
-        if (firstDigit == '8') {
-            currency = Currency.US;
-        } else if (firstDigit == '9') {
-            currency = Currency.EU;
-        } else {
-            currency = Currency.RUB;
+        switch (firstDigit) {
+            case '8' -> currency = Currency.US;
+            case '9' -> currency = Currency.EU;
+            default -> currency = Currency.RUB;
         }
         return currency;
     }
